@@ -6,7 +6,12 @@
 //
 
 import Foundation
+import Swinject
 
-final class GeneralAssembly {
+final class GeneralAssembly: Assembly {
     
+    func assemble(container: Container) {
+        
+    }
+
 }
