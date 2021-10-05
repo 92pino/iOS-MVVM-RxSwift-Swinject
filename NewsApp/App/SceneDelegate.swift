@@ -7,6 +7,7 @@
 
 import UIKit
 import Swinject
+import IQKeyboardManagerSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -20,18 +21,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
         /// setup  di
         assembler = Assembler([
-//            GeneralAssembly(),
-//            ServiceAssembly(),
-//            StartAssembly(),
-//            AuthAssembly(),
-//            MarketAssembly(),
-//            FundingAssembly(),
-//            WalletAssembly(),
-//            TradeAssembly(),
-//            ProfileAssembly()
+            GeneralAssembly(),
+            StartAssembly(),
+            MainAssembly()
         ], container: container)
+        
+        /// setup router
+        Router.shared.container = container
+        Router.shared.window = window
+        Router.shared.configIntialVC()
+        
+        /// setup keyboard
+        IQKeyboardManager.shared.enable = true
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

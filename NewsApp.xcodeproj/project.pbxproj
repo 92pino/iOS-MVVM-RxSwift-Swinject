@@ -14,7 +14,14 @@
 		D501EE8726B5797C0002A824 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D501EE8526B5797C0002A824 /* Main.storyboard */; };
 		D501EE8926B5797D0002A824 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D501EE8826B5797D0002A824 /* Assets.xcassets */; };
 		D501EE8C26B5797D0002A824 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D501EE8A26B5797D0002A824 /* LaunchScreen.storyboard */; };
+		D5152058270C458200F2E4C3 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5152057270C458200F2E4C3 /* StartVC.swift */; };
+		D515205A270C459C00F2E4C3 /* StartVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5152059270C459C00F2E4C3 /* StartVM.swift */; };
+		D515205C270C4A6400F2E4C3 /* StartAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515205B270C4A6400F2E4C3 /* StartAssembly.swift */; };
+		D515205E270C4AA700F2E4C3 /* MainAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515205D270C4AA700F2E4C3 /* MainAssembly.swift */; };
 		D52B6C992701C2E60054A529 /* GeneralAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52B6C982701C2E60054A529 /* GeneralAssembly.swift */; };
+		D52B6CA02701C9B90054A529 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52B6C9F2701C9B90054A529 /* Router.swift */; };
+		D52B6CA22701CB0E0054A529 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52B6CA12701CB0E0054A529 /* Constants.swift */; };
+		D52B6CA52701CB690054A529 /* Start.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D52B6CA42701CB690054A529 /* Start.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +33,14 @@
 		D501EE8826B5797D0002A824 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D501EE8B26B5797D0002A824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D501EE8D26B5797D0002A824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5152057270C458200F2E4C3 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
+		D5152059270C459C00F2E4C3 /* StartVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVM.swift; sourceTree = "<group>"; };
+		D515205B270C4A6400F2E4C3 /* StartAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAssembly.swift; sourceTree = "<group>"; };
+		D515205D270C4AA700F2E4C3 /* MainAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAssembly.swift; sourceTree = "<group>"; };
 		D52B6C982701C2E60054A529 /* GeneralAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralAssembly.swift; sourceTree = "<group>"; };
+		D52B6C9F2701C9B90054A529 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		D52B6CA12701CB0E0054A529 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D52B6CA42701CB690054A529 /* Start.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Start.storyboard; sourceTree = "<group>"; };
 		DACB0D693B24D3F9149DFCC6 /* Pods_NewsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF9CE99ECAD61011657C815B /* Pods-NewsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.release.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.release.xcconfig"; sourceTree = "<group>"; };
 		F299D1B6DE038F6C39CA54BC /* Pods-NewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.debug.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -82,6 +96,7 @@
 		D501EE7E26B5797C0002A824 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				D52B6C9E2701C9A10054A529 /* Util */,
 				D501EEA726B57AD80002A824 /* DI */,
 				D501EEA126B57A7B0002A824 /* Scenes */,
 				D501EEA026B57A6A0002A824 /* Data */,
@@ -118,6 +133,7 @@
 		D501EEA126B57A7B0002A824 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D52B6CA32701CB560054A529 /* Start */,
 				D501EEA326B57A8C0002A824 /* Details */,
 				D501EEA226B57A840002A824 /* Main */,
 			);
@@ -148,6 +164,8 @@
 		D501EEA526B57AA40002A824 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				D52B6C9D2701C88B0054A529 /* Local */,
+				D52B6C9C2701C8820054A529 /* Remote */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -163,6 +181,8 @@
 			isa = PBXGroup;
 			children = (
 				D52B6C982701C2E60054A529 /* GeneralAssembly.swift */,
+				D515205B270C4A6400F2E4C3 /* StartAssembly.swift */,
+				D515205D270C4AA700F2E4C3 /* MainAssembly.swift */,
 			);
 			path = DI;
 			sourceTree = "<group>";
@@ -172,6 +192,39 @@
 			children = (
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		D52B6C9C2701C8820054A529 /* Remote */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Remote;
+			sourceTree = "<group>";
+		};
+		D52B6C9D2701C88B0054A529 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		D52B6C9E2701C9A10054A529 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D52B6CA12701CB0E0054A529 /* Constants.swift */,
+				D52B6C9F2701C9B90054A529 /* Router.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		D52B6CA32701CB560054A529 /* Start */ = {
+			isa = PBXGroup;
+			children = (
+				D52B6CA42701CB690054A529 /* Start.storyboard */,
+				D5152057270C458200F2E4C3 /* StartVC.swift */,
+				D5152059270C459C00F2E4C3 /* StartVM.swift */,
+			);
+			path = Start;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D501EE8C26B5797D0002A824 /* LaunchScreen.storyboard in Resources */,
+				D52B6CA52701CB690054A529 /* Start.storyboard in Resources */,
 				D501EE8926B5797D0002A824 /* Assets.xcassets in Resources */,
 				D501EE8726B5797C0002A824 /* Main.storyboard in Resources */,
 			);
@@ -288,10 +342,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D515205E270C4AA700F2E4C3 /* MainAssembly.swift in Sources */,
 				D501EE8426B5797C0002A824 /* ViewController.swift in Sources */,
+				D515205A270C459C00F2E4C3 /* StartVM.swift in Sources */,
+				D515205C270C4A6400F2E4C3 /* StartAssembly.swift in Sources */,
+				D5152058270C458200F2E4C3 /* StartVC.swift in Sources */,
 				D501EE8026B5797C0002A824 /* AppDelegate.swift in Sources */,
+				D52B6CA02701C9B90054A529 /* Router.swift in Sources */,
 				D52B6C992701C2E60054A529 /* GeneralAssembly.swift in Sources */,
 				D501EE8226B5797C0002A824 /* SceneDelegate.swift in Sources */,
+				D52B6CA22701CB0E0054A529 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

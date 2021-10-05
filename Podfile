@@ -20,5 +20,14 @@ target 'NewsApp' do
 
   # Image loader
   pod 'SDWebImage'
+  
+  # Json convertor
+  pod 'SwiftyJSON'
+  
+  # Keyboard manager
+  pod 'IQKeyboardManagerSwift'
+  
+  # Alamofire Logger
+  pod 'AlamofireEasyLogger'
 
 end

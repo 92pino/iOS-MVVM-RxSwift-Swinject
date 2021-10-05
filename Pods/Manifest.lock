@@ -1,5 +1,8 @@
 PODS:
   - Alamofire (5.4.3)
+  - AlamofireEasyLogger (1.6.0):
+    - Alamofire (>= 5.0)
+  - IQKeyboardManagerSwift (6.5.6)
   - RxCocoa (6.1.0):
     - RxRelay (= 6.1.0)
     - RxSwift (= 6.1.0)
@@ -9,37 +12,47 @@ PODS:
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
+  - SwiftyJSON (5.0.1)
   - Swinject (2.6.2)
   - SwinjectStoryboard (2.2.0):
     - Swinject (~> 2.6)
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireEasyLogger
+  - IQKeyboardManagerSwift
   - RxCocoa (= 6.1.0)
   - RxSwift (= 6.1.0)
   - SDWebImage
+  - SwiftyJSON
   - Swinject (= 2.6.2)
   - SwinjectStoryboard
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - AlamofireEasyLogger
+    - IQKeyboardManagerSwift
     - RxCocoa
     - RxRelay
     - RxSwift
     - SDWebImage
+    - SwiftyJSON
     - Swinject
     - SwinjectStoryboard
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  AlamofireEasyLogger: f2fd10b57d973593a79a4b61f274c6a5cb3e1333
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
   RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
   RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: 73f08747c60a1b3ef3101466fce2cb3c7e9712c9
+PODFILE CHECKSUM: 1725c38d76e2c2f2dd9068d5fea217355d1cb3a8
 
 COCOAPODS: 1.10.1
