@@ -14,7 +14,7 @@ class StartAssembly: Assembly {
         
         // MARK: - VM
         
-        container.register(StartViewModeling.self, factory: { resolver in
+        container.register(StartViewModeling.self, factory: { _ in
             StartVM()
         }).inObjectScope(.weak)
         

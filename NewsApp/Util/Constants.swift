@@ -14,5 +14,7 @@ struct Constants {
     static let START_STORYBOARD_ID = "Start"
     
     // MARK: - VC Ids
+    
     static let START_VC_ID = "StartVC"
+    static let MAIN_VC_ID = "MainVC"
 }

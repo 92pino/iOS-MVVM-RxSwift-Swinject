@@ -6,16 +6,27 @@
 //
 
 import UIKit
+import RxSwift
 
-class StartVC: UIViewController {
+class StartVC: BaseVC {
     
     // MARK: - Properties
     
     var viewModel: StartViewModeling!
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func setupObservers() {
+        viewModel.trigger.subscribe(onNext: { [weak self] isChanged in
+            if (isChanged) {
+                self?.navigateToMain()
+                print("changed")
+            }
+        }).disposed(by: disposeBag)
     }
-
+    
+    private func navigateToMain() {
+        DispatchQueue.main.async {
+            Router.shared.navigateToMain(navigationController: self.navigationController)
+        }
+        
+    }
 }
