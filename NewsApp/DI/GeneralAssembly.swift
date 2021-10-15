@@ -12,6 +12,10 @@ final class GeneralAssembly: Assembly {
     
     func assemble(container: Container) {
         
+        // MARK : - UserDefualts
+        container.register(UserDefualtManaging.self,  factory: { _ in
+            UserDefualtManager()
+        }).inObjectScope(.container)
     }
 
 }

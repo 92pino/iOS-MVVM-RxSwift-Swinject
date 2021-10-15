@@ -23,6 +23,12 @@
 		D58DA466270F01040093DB24 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58DA465270F01040093DB24 /* BaseVC.swift */; };
 		D58DA468270F01E40093DB24 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58DA467270F01E40093DB24 /* MainVC.swift */; };
 		D58DA46A270F034D0093DB24 /* MainVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58DA469270F034D0093DB24 /* MainVM.swift */; };
+		D5AECD8327197C67005B6A54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5AECD8227197C67005B6A54 /* Main.storyboard */; };
+		D5AECD8527198150005B6A54 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AECD8427198150005B6A54 /* NetworkManager.swift */; };
+		D5AECD8727198325005B6A54 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AECD8627198325005B6A54 /* ApiResult.swift */; };
+		D5AECD8927198830005B6A54 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AECD8827198830005B6A54 /* UserDefaultManager.swift */; };
+		D5AECD8B271989C2005B6A54 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AECD8A271989C2005B6A54 /* Logger.swift */; };
+		D5AECD8D271989F9005B6A54 /* MyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AECD8C271989F9005B6A54 /* MyError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +49,12 @@
 		D58DA465270F01040093DB24 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		D58DA467270F01E40093DB24 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		D58DA469270F034D0093DB24 /* MainVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVM.swift; sourceTree = "<group>"; };
+		D5AECD8227197C67005B6A54 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D5AECD8427198150005B6A54 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D5AECD8627198325005B6A54 /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
+		D5AECD8827198830005B6A54 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		D5AECD8A271989C2005B6A54 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		D5AECD8C271989F9005B6A54 /* MyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyError.swift; sourceTree = "<group>"; };
 		DACB0D693B24D3F9149DFCC6 /* Pods_NewsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF9CE99ECAD61011657C815B /* Pods-NewsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.release.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.release.xcconfig"; sourceTree = "<group>"; };
 		F299D1B6DE038F6C39CA54BC /* Pods-NewsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsApp.debug.xcconfig"; path = "Target Support Files/Pods-NewsApp/Pods-NewsApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -98,14 +110,14 @@
 		D501EE7E26B5797C0002A824 /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
-				D52B6C9E2701C9A10054A529 /* Util */,
-				D501EEA726B57AD80002A824 /* DI */,
-				D501EEA126B57A7B0002A824 /* Scenes */,
-				D501EEA026B57A6A0002A824 /* Data */,
 				D501EE9D26B57A640002A824 /* App */,
 				D501EE8826B5797D0002A824 /* Assets.xcassets */,
-				D501EE8A26B5797D0002A824 /* LaunchScreen.storyboard */,
+				D501EEA026B57A6A0002A824 /* Data */,
+				D501EEA726B57AD80002A824 /* DI */,
 				D501EE8D26B5797D0002A824 /* Info.plist */,
+				D501EE8A26B5797D0002A824 /* LaunchScreen.storyboard */,
+				D501EEA126B57A7B0002A824 /* Scenes */,
+				D52B6C9E2701C9A10054A529 /* Util */,
 			);
 			path = NewsApp;
 			sourceTree = "<group>";
@@ -146,6 +158,7 @@
 			children = (
 				D58DA467270F01E40093DB24 /* MainVC.swift */,
 				D58DA469270F034D0093DB24 /* MainVM.swift */,
+				D5AECD8227197C67005B6A54 /* Main.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -160,6 +173,7 @@
 		D501EEA426B57A950002A824 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				D5AECD8427198150005B6A54 /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -207,6 +221,8 @@
 		D52B6C9D2701C88B0054A529 /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				D5AECD8627198325005B6A54 /* ApiResult.swift */,
+				D5AECD8C271989F9005B6A54 /* MyError.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -216,6 +232,8 @@
 			children = (
 				D52B6CA12701CB0E0054A529 /* Constants.swift */,
 				D52B6C9F2701C9B90054A529 /* Router.swift */,
+				D5AECD8827198830005B6A54 /* UserDefaultManager.swift */,
+				D5AECD8A271989C2005B6A54 /* Logger.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -300,6 +318,7 @@
 				D501EE8C26B5797D0002A824 /* LaunchScreen.storyboard in Resources */,
 				D52B6CA52701CB690054A529 /* Start.storyboard in Resources */,
 				D501EE8926B5797D0002A824 /* Assets.xcassets in Resources */,
+				D5AECD8327197C67005B6A54 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,13 +374,18 @@
 				D515205E270C4AA700F2E4C3 /* MainAssembly.swift in Sources */,
 				D515205A270C459C00F2E4C3 /* StartVM.swift in Sources */,
 				D515205C270C4A6400F2E4C3 /* StartAssembly.swift in Sources */,
+				D5AECD8527198150005B6A54 /* NetworkManager.swift in Sources */,
 				D5152058270C458200F2E4C3 /* StartVC.swift in Sources */,
 				D58DA468270F01E40093DB24 /* MainVC.swift in Sources */,
 				D501EE8026B5797C0002A824 /* AppDelegate.swift in Sources */,
+				D5AECD8B271989C2005B6A54 /* Logger.swift in Sources */,
 				D52B6CA02701C9B90054A529 /* Router.swift in Sources */,
 				D58DA46A270F034D0093DB24 /* MainVM.swift in Sources */,
+				D5AECD8927198830005B6A54 /* UserDefaultManager.swift in Sources */,
+				D5AECD8D271989F9005B6A54 /* MyError.swift in Sources */,
 				D52B6C992701C2E60054A529 /* GeneralAssembly.swift in Sources */,
 				D501EE8226B5797C0002A824 /* SceneDelegate.swift in Sources */,
+				D5AECD8727198325005B6A54 /* ApiResult.swift in Sources */,
 				D52B6CA22701CB0E0054A529 /* Constants.swift in Sources */,
 				D58DA466270F01040093DB24 /* BaseVC.swift in Sources */,
 			);

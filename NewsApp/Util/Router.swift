@@ -31,7 +31,7 @@ class Router {
     
     func navigateToMain(navigationController: UINavigationController?) {
         if let container = container, let window = window {
-            let storyboard = SwinjectStoryboard.create(name: Constants.START_STORYBOARD_ID, bundle: .main, container: container)
+            let storyboard = SwinjectStoryboard.create(name: Constants.Main_STORYBOARD_ID, bundle: .main, container: container)
             let vc = storyboard.instantiateViewController(withIdentifier: Constants.MAIN_VC_ID) as! MainVC
             let navigationController = UINavigationController(rootViewController: vc)
             navigationController.navigationBar.isHidden = true
