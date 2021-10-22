@@ -19,7 +19,6 @@ class Router {
     var container: Container?
     
     func configIntialVC() {
-        window = UIWindow(frame: UIScreen.main.bounds)
         if let container = container, let window = window {
             window.makeKeyAndVisible()
             let storyboard = SwinjectStoryboard.create(name: Constants.START_STORYBOARD_ID, bundle: nil, container: container)
