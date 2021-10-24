@@ -20,5 +20,12 @@ struct Constants {
     static let MAIN_VC_ID = "MainVC"
     
     // MARK: - General
+    
     static let BACK_GROUND_QUEUE = "NewsApp.Network.Queue"
+    
+    // MARK: - Network
+    
+    static let BASE_URL = "https://newsapi.org/v2/"
+    static let API_KEY = "b7a03afc9a994b7dbbc1eaa74048ffc9"
+    
 }

@@ -78,7 +78,7 @@ final class NetworkManager: NetworkingManager {
                         } else {
                             var myError = MyError(message: "Temp error")
                             if let data = response.data {
-                                let errorBodyJson = JSON(data)
+                                let _ = JSON(data)
                                 observer.onError(myError)
                             } else {
                                 myError.message = error.localizedDescription
@@ -140,7 +140,7 @@ final class NetworkManager: NetworkingManager {
                     } else {
                         var myError = MyError(message: "Temp error")
                         if let data = response.data {
-                            let errorBodyJson = JSON(data)
+                            let _ = JSON(data)
                             observer.onError(myError)
                         } else {
                             myError.message = error.localizedDescription
