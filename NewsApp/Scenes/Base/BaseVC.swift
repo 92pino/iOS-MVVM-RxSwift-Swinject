@@ -28,4 +28,8 @@ class BaseVC: UIViewController, BaseVCProtocol {
         setupObservers()
         setupViewBindings()
     }
+    
+    deinit {
+        Logger.info(message: "Deallocated >>> \(self)")
+    }
 }
