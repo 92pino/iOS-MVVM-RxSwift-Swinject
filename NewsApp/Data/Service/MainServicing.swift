@@ -35,7 +35,7 @@ enum NewsEndPoints {
     var url : String {
         switch self {
         case .headLines:
-            return "top-headlines"
+            return "\(Constants.BASE_URL)top-headlines"
         default:
             return ""
         }

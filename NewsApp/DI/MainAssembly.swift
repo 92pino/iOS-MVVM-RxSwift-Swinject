@@ -12,11 +12,10 @@ class MainAssembly: Assembly {
     
     func assemble(container: Container) {
         
-        
         // MARK: - VM
         
-        container.register(MainViewModeling.self, factory: { _ in
-            MainVM()
+        container.register(MainViewModeling.self, factory: { resolver in
+            MainVM(mainService: resolver.resolve(MainServicing.self)!)
         }).inObjectScope(.weak)
         
         // MARK: - VC
@@ -24,6 +23,5 @@ class MainAssembly: Assembly {
         container.storyboardInitCompleted(MainVC.self) { resolver, controller in
             controller.viewModel = resolver.resolve(MainViewModeling.self)!
         }
-        
     }    
 }

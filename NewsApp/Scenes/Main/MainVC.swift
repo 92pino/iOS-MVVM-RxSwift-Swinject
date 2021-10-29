@@ -13,13 +13,26 @@ class MainVC: BaseVC {
     // MARK: - Properties
     
     var viewModel: MainViewModeling!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    
+    override func setupView() {
+        viewModel.getHeadLines(country: "us")
     }
     
-
-   
+    override func setupObservers() {
+        viewModel.dataSource.subscribe(onNext: { [weak self] result in
+            switch result {
+            case .success(let articles):
+                print("reza is successful")
+            case .failure(let error):
+                print("reza is not successful")
+            }
+        }).disposed(by: disposeBag)
+    }
+    
+    override func setupViewBindings() {
+        /* NO-OP */
+    }
+    
+    
+    
 }

@@ -8,6 +8,7 @@
 import UIKit
 import Swinject
 import IQKeyboardManagerSwift
+import AlamofireEasyLogger
 
 
 @UIApplicationMain
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     internal let container = Container()
     var assembler: Assembler!
+    let alamofireLogger = FancyAppAlamofireLogger(prettyPrint: true) { print($0) }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -25,8 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             assembler = Assembler([
                 GeneralAssembly(),
+                ServiceAssembly(),
                 StartAssembly(),
+                MainAssembly()
             ], container: container)
+            
             /// setup router
             Router.shared.container = container
             Router.shared.window = window

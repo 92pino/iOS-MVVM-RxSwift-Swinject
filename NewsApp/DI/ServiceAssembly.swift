@@ -8,7 +8,7 @@
 import Foundation
 import Swinject
 
-class NetworkAssembly: Assembly {
+class  ServiceAssembly: Assembly {
     
     func assemble(container: Container) {
         
@@ -20,6 +20,9 @@ class NetworkAssembly: Assembly {
         
         // MARK: - Service
         
+        container.register(MainServicing.self, factory: { resolver in
+            MainService(network: resolver.resolve(NetworkingManager.self)!)
+        }).inObjectScope(.transient)
         
         
         
