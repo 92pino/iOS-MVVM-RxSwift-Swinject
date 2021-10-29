@@ -10,12 +10,13 @@ import RxSwift
 import RxCocoa
 
 protocol MainViewModeling {
-    var dataSource: PublishSubject<Result<[Articles]?, Error>> { get }
+    var dataSource: PublishSubject<Result<[Articles], Error>> { get }
     func getHeadLines(country: String)
 }
 
 class MainVM: BaseVM, MainViewModeling {
-    var dataSource = PublishSubject<Result<[Articles]?, Error>>()
+    
+    var dataSource = PublishSubject<Result<[Articles], Error>>()
     
     // MARK:- Properties
     
@@ -27,11 +28,9 @@ class MainVM: BaseVM, MainViewModeling {
     
     func getHeadLines(country: String)  {
         mainService.getTopHeadLines(country: country).subscribe(onNext: { [weak self] apiResult in
-            guard let strongSelf = self else { return }
-            strongSelf.dataSource.onNext(.success(apiResult.data?.articles))
+            self?.dataSource.onNext(.success(apiResult.data?.articles ?? []))
         }, onError: { [weak self] error in
-            guard let strongSelf = self else { return }
-            strongSelf.dataSource.onNext(.failure(error))
+            self?.dataSource.onNext(.failure(error))
         }).disposed(by: disposeBag)
     }
 }

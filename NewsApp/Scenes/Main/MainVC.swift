@@ -22,9 +22,11 @@ class MainVC: BaseVC {
         viewModel.dataSource.subscribe(onNext: { [weak self] result in
             switch result {
             case .success(let articles):
-                print("reza is successful")
+                print("Articles are \(articles)")
+                break
             case .failure(let error):
-                print("reza is not successful")
+                Logger.error(message: error.localizedDescription)
+                break
             }
         }).disposed(by: disposeBag)
     }
