@@ -8,11 +8,11 @@
 import UIKit
 import Foundation
 
-class MainVC: BaseVC {
+class HomeVC: BaseVC {
     
     // MARK: - Properties
     
-    var viewModel: MainViewModeling!
+    var viewModel: HomeViewModeling!
     
     override func setupView() {
         viewModel.getHeadLines(country: "us")

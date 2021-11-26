@@ -27,7 +27,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             GeneralAssembly(),
             ServiceAssembly(),
             StartAssembly(),
-            MainAssembly()
+            HomeAssembly()
         ], container: container)
         
         /// setup router

@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 GeneralAssembly(),
                 ServiceAssembly(),
                 StartAssembly(),
-                MainAssembly()
+                HomeAssembly()
             ], container: container)
             
             /// setup router
@@ -40,8 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         /// setup keyboard
         IQKeyboardManager.shared.enable = true
-        
-        
+
         return true
     }
     

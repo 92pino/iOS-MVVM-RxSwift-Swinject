@@ -9,20 +9,20 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol MainViewModeling {
+protocol HomeViewModeling {
     var dataSource: PublishSubject<Result<[Articles], Error>> { get }
     func getHeadLines(country: String)
 }
 
-class MainVM: BaseVM, MainViewModeling {
+class HomeVM: BaseVM, HomeViewModeling {
     
     var dataSource = PublishSubject<Result<[Articles], Error>>()
     
     // MARK:- Properties
     
-    var mainService: MainServicing
+    var mainService: HomeServicing
     
-    init(mainService: MainServicing) {
+    init(mainService: HomeServicing) {
         self.mainService = mainService
     }
     

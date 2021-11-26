@@ -25,8 +25,7 @@ class StartVC: BaseVC {
     
     private func navigateToMain() {
         DispatchQueue.main.async {
-            Router.shared.navigateToMain(navigationController: self.navigationController)
+            Router.shared.navigateToDashbaord()
         }
-        
     }
 }

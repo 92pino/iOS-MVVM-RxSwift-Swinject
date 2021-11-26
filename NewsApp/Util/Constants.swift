@@ -12,12 +12,14 @@ struct Constants {
     // MARK: - Storyboards Ids
     
     static let START_STORYBOARD_ID = "Start"
-    static let Main_STORYBOARD_ID = "Main"
+    static let TABBAR_STORYBOARD_ID = "Tabbar"
+    static let HOME_STORYBOARD_ID = "Home"
     
     // MARK: - VC Ids
     
     static let START_VC_ID = "StartVC"
-    static let MAIN_VC_ID = "MainVC"
+    static let TABBAR_VC_ID = "TabbarVC"
+    static let Home_VC_ID = "HomeVC"
     
     // MARK: - General
     
