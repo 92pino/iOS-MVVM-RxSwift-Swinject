@@ -3,6 +3,8 @@ PODS:
   - AlamofireEasyLogger (1.6.0):
     - Alamofire (>= 5.0)
   - IQKeyboardManagerSwift (6.5.6)
+  - Nimble (9.2.1)
+  - Quick (4.0.0)
   - RxCocoa (6.1.0):
     - RxRelay (= 6.1.0)
     - RxSwift (= 6.1.0)
@@ -21,6 +23,8 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireEasyLogger
   - IQKeyboardManagerSwift
+  - Nimble
+  - Quick
   - RxCocoa (= 6.1.0)
   - RxSwift (= 6.1.0)
   - SDWebImage
@@ -33,6 +37,8 @@ SPEC REPOS:
     - Alamofire
     - AlamofireEasyLogger
     - IQKeyboardManagerSwift
+    - Nimble
+    - Quick
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -45,6 +51,8 @@ SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   AlamofireEasyLogger: f2fd10b57d973593a79a4b61f274c6a5cb3e1333
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
+  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
   RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
   RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
   RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
@@ -53,6 +61,6 @@ SPEC CHECKSUMS:
   Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: 1725c38d76e2c2f2dd9068d5fea217355d1cb3a8
+PODFILE CHECKSUM: ba0dc1ead567c755068dbb36c3a789edcbe0d50e
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2
