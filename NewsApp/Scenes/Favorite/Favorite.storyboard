@@ -29,7 +29,7 @@
         <scene sceneID="Pf7-rH-CYY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="pDR-xW-beQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorite" image="Home" id="ejB-D9-CQs"/>
+                    <tabBarItem key="tabBarItem" title="Favorite" image="Favorite" id="ejB-D9-CQs"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uvL-lO-zEX">
@@ -46,7 +46,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Home" width="24" height="24"/>
+        <image name="Favorite" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
