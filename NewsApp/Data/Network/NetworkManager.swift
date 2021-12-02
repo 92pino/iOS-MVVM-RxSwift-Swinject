@@ -12,13 +12,12 @@ import Alamofire
 import SwiftyJSON
 
 
-protocol NetworkingManager {
+protocol NetworkManagering {
     func request<D: Codable>(method: NetworkMethod, url: String, parameters: [String : Any]?, type: D.Type) -> Observable<ApiResult<D>>
     func request<D: Codable>(method: NetworkMethod, url: String, parameters: [String : Any]?, type: D.Type, header: [String: String]) -> Observable<ApiResult<D>>
-    func uploadImage<D: Codable>(method: NetworkMethod, url: String, imageData: Data, fileName: String, type: D.Type) -> Observable<ApiResult<D>>
 }
 
-final class NetworkManager: NetworkingManager {
+final class NetworkManager: NetworkManagering {
     
     private let queue = DispatchQueue(label: Constants.BACK_GROUND_QUEUE)
     private let userDefualtManaging: UserDefualtManaging
@@ -87,69 +86,6 @@ final class NetworkManager: NetworkingManager {
                         }
                     }
                 }
-            return Disposables.create {
-                request.cancel()
-            }
-        }
-    }
-    
-    
-    func uploadImage<D: Codable>(method: NetworkMethod, url: String, imageData: Data, fileName: String, type: D.Type) -> Observable<ApiResult<D>> {
-        return Observable.create { observer in
-            
-            let method = method.httpMethod()
-            let headers: HTTPHeaders = [
-                "Content-Type": "multipart/form-data",
-                "Accept-Language": "",
-                "Authorization": "Bearer "
-            ]
-            
-            let request = AF.upload(multipartFormData: { multipartFormData in
-                                        multipartFormData.append(
-                                            imageData,
-                                            withName: "fileset",
-                                            fileName: fileName,
-                                            mimeType: "image/jpg"
-                                        )},
-                                    to: url,
-                                    method: method,
-                                    headers: headers
-            ).validate()
-            .response(queue: self.queue) { response in
-                
-                switch response.result {
-                case .success(_ ):
-                    guard let data = response.data else {
-                        observer.onNext(ApiResult(data: nil, statusCode: response.response?.statusCode))
-                        observer.onCompleted()
-                        return
-                    }
-                    
-                    if let model = try? JSONDecoder().decode(D.self, from: data) {
-                        observer.onNext(ApiResult(data: model, statusCode: response.response?.statusCode))
-                        observer.onCompleted()
-                    } else {
-                        observer.onError(MyError(message: "Error"))
-                        observer.onCompleted()
-                    }
-                    
-                case .failure(let error):
-                    if error.isSessionTaskError {
-                        observer.onError(MyError(message: "No Internet Connection"))
-                        
-                    } else {
-                        var myError = MyError(message: "Temp error")
-                        if let data = response.data {
-                            let _ = JSON(data)
-                            observer.onError(myError)
-                        } else {
-                            myError.message = error.localizedDescription
-                            observer.onError(myError)
-                        }
-                    }
-                }
-            }
-            
             return Disposables.create {
                 request.cancel()
             }

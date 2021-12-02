@@ -14,9 +14,9 @@ protocol HomeServicing {
 
 class HomeService: HomeServicing {
     
-    private let network: NetworkingManager
+    private let network: NetworkManagering
     
-    init(network: NetworkingManager) {
+    init(network: NetworkManagering) {
         self.network = network
     }
     

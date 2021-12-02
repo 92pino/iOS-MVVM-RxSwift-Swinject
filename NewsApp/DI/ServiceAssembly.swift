@@ -14,14 +14,14 @@ class  ServiceAssembly: Assembly {
         
         // MARK: - Network
         
-        container.register(NetworkingManager.self, factory: { resolver in
+        container.register(NetworkManagering.self, factory: { resolver in
             NetworkManager(userDefualtManaging: resolver.resolve(UserDefualtManaging.self)!)
         }).inObjectScope(.container)
         
         // MARK: - Service
         
         container.register(HomeServicing.self, factory: { resolver in
-            HomeService(network: resolver.resolve(NetworkingManager.self)!)
+            HomeService(network: resolver.resolve(NetworkManagering.self)!)
         }).inObjectScope(.transient)
         
         
