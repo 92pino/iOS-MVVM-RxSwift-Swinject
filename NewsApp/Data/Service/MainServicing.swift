@@ -36,9 +36,6 @@ enum NewsEndPoints {
         switch self {
         case .headLines:
             return "\(Constants.BASE_URL)top-headlines"
-        default:
-            return ""
         }
-    
     }
 }
