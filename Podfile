@@ -30,6 +30,9 @@ target 'NewsApp' do
   # Alamofire Logger
   pod 'AlamofireEasyLogger'
   
+  # Realm
+  pod 'RealmSwift'
+  
   target 'NewsAppTests' do
       inherit! :search_paths
       # Pods for testing
