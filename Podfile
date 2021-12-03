@@ -40,8 +40,5 @@ target 'NewsApp' do
       pod 'Quick'
       pod 'Nimble'
     end
-
-
-	
-
+  
 end
