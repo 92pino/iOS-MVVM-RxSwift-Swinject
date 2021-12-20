@@ -22,8 +22,7 @@ struct Constants {
     static let Home_VC_ID = "HomeVC"
     
     // MARK: - General
-    
-    static let BACK_GROUND_QUEUE = "NewsApp.Network.Queue"
+
     
     // MARK: - Network
     

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol UserDefualtManaging {
+protocol UserDefualtManagering {
     func getString(key: String) -> String
     func getBool(key: String) -> Bool
     func setString(key: String, value: String)
@@ -15,7 +15,7 @@ protocol UserDefualtManaging {
     func remove(key: String)
 }
 
-class UserDefualtManager: UserDefualtManaging {
+class UserDefualtManager: UserDefualtManagering {
     
     private var userdefualt: UserDefaults
     

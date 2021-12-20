@@ -9,36 +9,42 @@ import Foundation
 import RealmSwift
 
 protocol DatabaseManagering {
-    
+    func write()
+    func read()
+    func update()
+    func delete()
+    func deleteAll()
 }
 
 class DatabaseManager: DatabaseManagering {
     
-    private var database: Realm
-    static let sharedInstance = DatabaseManager()
+    private var database: Realm? = nil
     
-    private init() {
-        database = try! Realm()
-    }
-    
-//    func addData(object: Item)   {
-//        try! database.write {
-//            database.add(object, update: true)
-//            Logger.info(message: <#T##String#>)
-//        }
-//    }
-    
-    func deleteAllFromDatabase()  {
-        try! database.write {
-            database.deleteAll()
+    init() {
+        do {
+            database = try Realm()
+        } catch {
+            Logger.error(message: error.localizedDescription)
         }
     }
     
-//    func deleteFromDb(object: Item)   {
-//        try!   database.write {
-//            database.delete(object)
-//        }
-//    }
+    func write() {
+        
+    }
     
+    func read() {
+        
+    }
+    
+    func update() {
+        
+    }
+    
+    func delete() {
+        
+    }
+    
+    func deleteAll() {
+        
+    }
 }
-

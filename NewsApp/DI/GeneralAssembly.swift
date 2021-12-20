@@ -14,9 +14,14 @@ final class GeneralAssembly: Assembly {
         
         // MARK : - UserDefualts
         
-        container.register(UserDefualtManaging.self,  factory: { _ in
+        container.register(UserDefualtManagering.self, factory: { _ in
             UserDefualtManager()
         }).inObjectScope(.container)
+        
+        // MARK : - DatabaseManager
+        
+        container.register(DatabaseManagering.self, factory: { _ in
+            DatabaseManager()
+        }).inObjectScope(.container)
     }
-
 }

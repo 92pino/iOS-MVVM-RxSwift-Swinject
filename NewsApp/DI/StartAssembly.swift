@@ -23,6 +23,5 @@ class StartAssembly: Assembly {
         container.storyboardInitCompleted(StartVC.self) { resolver, controller in
             controller.viewModel = resolver.resolve(StartViewModeling.self)!
         }
-        
     }
 }

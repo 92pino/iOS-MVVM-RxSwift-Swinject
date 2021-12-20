@@ -8,7 +8,6 @@
 import Foundation
 
 struct ApiResult<D: Codable> {
-    
     var data: D?
     var statusCode: Int?
 }

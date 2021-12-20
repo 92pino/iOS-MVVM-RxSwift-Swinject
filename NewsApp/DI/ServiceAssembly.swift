@@ -15,7 +15,7 @@ class  ServiceAssembly: Assembly {
         // MARK: - Network
         
         container.register(NetworkManagering.self, factory: { resolver in
-            NetworkManager(userDefualtManaging: resolver.resolve(UserDefualtManaging.self)!)
+            NetworkManager(userDefualtManagering: resolver.resolve(UserDefualtManagering.self)!)
         }).inObjectScope(.container)
         
         // MARK: - Service
@@ -23,10 +23,5 @@ class  ServiceAssembly: Assembly {
         container.register(HomeServicing.self, factory: { resolver in
             HomeService(network: resolver.resolve(NetworkManagering.self)!)
         }).inObjectScope(.transient)
-        
-        
-        
     }
-    
-    
 }

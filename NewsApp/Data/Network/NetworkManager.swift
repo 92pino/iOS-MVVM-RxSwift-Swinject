@@ -19,16 +19,15 @@ protocol NetworkManagering {
 
 final class NetworkManager: NetworkManagering {
     
-    private let queue = DispatchQueue(label: Constants.BACK_GROUND_QUEUE)
-    private let userDefualtManaging: UserDefualtManaging
+    private let queue = DispatchQueue(label: "NewsApp.Network.Queue", qos: .background)
+    private let userDefualtManagering: UserDefualtManagering
     
-    init(userDefualtManaging: UserDefualtManaging) {
-        self.userDefualtManaging = userDefualtManaging
+    init(userDefualtManagering: UserDefualtManagering) {
+        self.userDefualtManagering = userDefualtManagering
     }
     
     func request<D>(method: NetworkMethod, url: String, parameters: [String : Any]?, type: D.Type, header: [String : String]) -> Observable<ApiResult<D>> where D : Decodable, D : Encodable {
         return handleRequest(method: method, url: url, parameters: parameters, type: type, header: header)
-        
     }
     
     func request<D: Codable>(method: NetworkMethod, url: String, parameters: [String : Any]?, type: D.Type) -> Observable<ApiResult<D>> {
@@ -37,19 +36,23 @@ final class NetworkManager: NetworkManagering {
     
     private func handleRequest<D>(method: NetworkMethod, url: String, parameters: [String : Any]?, type: D.Type, header: [String : String]?) -> Observable<ApiResult<D>> where D : Decodable, D : Encodable {
         return Observable.create { observer in
+            
             let method = method.httpMethod()
+            
             var headers: HTTPHeaders = [
                 "Content-Type": "application/json",
                 "Accept-Language": "",
-                "Authorization": "Bearer ",
-                
+                "Authorization": "Bearer "
             ]
-            if header != nil {
-                headers["Origin"] = "https://didex.ir"
+            
+            if let header = header {
+                for (key, value) in header {
+                    headers[key] = value
+                }
             }
             
-            if parameters != nil {
-                Logger.info(message: "API parms: \(parameters!)")
+            if let parameters = parameters {
+                Logger.info(message: "API params: \(parameters)")
             }
             
             let request = AF.request(url, method: method, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
@@ -67,23 +70,13 @@ final class NetworkManager: NetworkManagering {
                             observer.onNext(ApiResult(data: model, statusCode: response.response?.statusCode))
                             observer.onCompleted()
                         } else {
-                            observer.onError(MyError(message: "Error"))
+                            observer.onError(MyError(message: "Decoding Failed"))
                             observer.onCompleted()
                         }
-                        
                     case .failure(let error):
-                        if error.isSessionTaskError {
-                            observer.onError(MyError(message: "No Internet Connection"))
-                        } else {
-                            var myError = MyError(message: "Temp error")
-                            if let data = response.data {
-                                let _ = JSON(data)
-                                observer.onError(myError)
-                            } else {
-                                myError.message = error.localizedDescription
-                                observer.onError(myError)
-                            }
-                        }
+                        var myError = MyError(message: "")
+                        myError.message = error.localizedDescription
+                        observer.onError(myError)
                     }
                 }
             return Disposables.create {
