@@ -20,9 +20,11 @@ class HomeVC: BaseVC {
     
     override func setupObservers() {
         viewModel.dataSource.subscribe(onNext: { [weak self] result in
+            guard let strongSelf = self else { return }
+            
             switch result {
             case .success(let articles):
-                print("Articles are \(articles)")
+               
                 break
             case .failure(let error):
                 Logger.error(message: error.localizedDescription)
