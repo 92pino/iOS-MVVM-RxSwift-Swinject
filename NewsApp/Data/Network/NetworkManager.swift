@@ -9,7 +9,6 @@ import Foundation
 import RxCocoa
 import RxSwift
 import Alamofire
-import SwiftyJSON
 
 
 protocol NetworkManagering {

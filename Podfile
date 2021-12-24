@@ -21,9 +21,6 @@ target 'NewsApp' do
   # Image loader
   pod 'SDWebImage'
   
-  # Json convertor
-  pod 'SwiftyJSON'
-  
   # Keyboard manager
   pod 'IQKeyboardManagerSwift'
   
@@ -31,7 +28,7 @@ target 'NewsApp' do
   pod 'AlamofireEasyLogger'
   
   # Realm
-  pod 'RealmSwift'
+  pod 'RxRealm'
   
   target 'NewsAppTests' do
       inherit! :search_paths

@@ -11,7 +11,6 @@ import RxCocoa
 
 protocol HomeViewModeling {
     var dataSource: PublishSubject<Result<[Articles], Error>> { get }
-    func getHeadLines(country: String)
 }
 
 class HomeVM: BaseVM, HomeViewModeling {
@@ -24,9 +23,11 @@ class HomeVM: BaseVM, HomeViewModeling {
     
     init(mainService: HomeServicing) {
         self.mainService = mainService
+        super.init()
+        getHeadLines(country: "us")
     }
     
-    func getHeadLines(country: String)  {
+    private func getHeadLines(country: String)  {
         mainService.getTopHeadLines(country: country).subscribe(onNext: { [weak self] apiResult in
             self?.dataSource.onNext(.success(apiResult.data?.articles ?? []))
         }, onError: { [weak self] error in

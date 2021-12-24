@@ -5,21 +5,25 @@ PODS:
   - IQKeyboardManagerSwift (6.5.6)
   - Nimble (9.2.1)
   - Quick (4.0.0)
-  - Realm (10.20.0):
-    - Realm/Headers (= 10.20.0)
-  - Realm/Headers (10.20.0)
-  - RealmSwift (10.20.0):
-    - Realm (= 10.20.0)
+  - Realm (10.20.1):
+    - Realm/Headers (= 10.20.1)
+  - Realm/Headers (10.20.1)
+  - RealmSwift (10.20.1):
+    - Realm (= 10.20.1)
   - RxCocoa (6.1.0):
     - RxRelay (= 6.1.0)
     - RxSwift (= 6.1.0)
+  - RxRealm (5.0.3):
+    - Realm (~> 10.7)
+    - RealmSwift (~> 10.7)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
   - RxRelay (6.1.0):
     - RxSwift (= 6.1.0)
   - RxSwift (6.1.0)
   - SDWebImage (5.11.1):
     - SDWebImage/Core (= 5.11.1)
   - SDWebImage/Core (5.11.1)
-  - SwiftyJSON (5.0.1)
   - Swinject (2.6.2)
   - SwinjectStoryboard (2.2.0):
     - Swinject (~> 2.6)
@@ -30,11 +34,10 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Nimble
   - Quick
-  - RealmSwift
   - RxCocoa (= 6.1.0)
+  - RxRealm
   - RxSwift (= 6.1.0)
   - SDWebImage
-  - SwiftyJSON
   - Swinject (= 2.6.2)
   - SwinjectStoryboard
 
@@ -48,10 +51,10 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - RxCocoa
+    - RxRealm
     - RxRelay
     - RxSwift
     - SDWebImage
-    - SwiftyJSON
     - Swinject
     - SwinjectStoryboard
 
@@ -61,16 +64,16 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
   Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
-  Realm: ae32bdc1da7d19c7617e0400201a77acd4a211b9
-  RealmSwift: c95eec6a712924870b2e36c4c081d63ec07e5414
+  Realm: fac5ecd031fcb81171627b74944c885662d4b266
+  RealmSwift: 9b02d25acb46a14756bde9893abb99e2e3675923
   RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
+  RxRealm: d9fedf16e3ead54b0be2077d2ff4a1b2dc27be39
   RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
   RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
-  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: c9f665080a04a28cd459030295c620a1c9d21fbd
+PODFILE CHECKSUM: d845df47a5abbaaf6c47ff945d64ad3247dc4789
 
 COCOAPODS: 1.11.2

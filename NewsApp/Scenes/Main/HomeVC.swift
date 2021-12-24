@@ -15,7 +15,7 @@ class HomeVC: BaseVC {
     var viewModel: HomeViewModeling!
     
     override func setupView() {
-        viewModel.getHeadLines(country: "us")
+        
     }
     
     override func setupObservers() {
