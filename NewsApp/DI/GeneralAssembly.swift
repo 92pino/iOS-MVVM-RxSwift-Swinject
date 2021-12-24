@@ -18,10 +18,12 @@ final class GeneralAssembly: Assembly {
             UserDefualtManager()
         }).inObjectScope(.container)
         
-        // MARK : - DatabaseManager
+        // MARk : - Network
         
-        container.register(DatabaseManagering.self, factory: { _ in
-            DatabaseManager()
+        container.register(NetworkManagering.self, factory: { resolver in
+            NetworkManager(userDefualtManagering: resolver.resolve(UserDefualtManagering.self)!)
         }).inObjectScope(.container)
+        
+        
     }
 }

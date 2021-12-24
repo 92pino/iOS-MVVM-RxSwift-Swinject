@@ -41,7 +41,6 @@
 		D5AECD8927198830005B6A54 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AECD8827198830005B6A54 /* UserDefaultManager.swift */; };
 		D5AECD8B271989C2005B6A54 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AECD8A271989C2005B6A54 /* Logger.swift */; };
 		D5AECD8D271989F9005B6A54 /* MyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5AECD8C271989F9005B6A54 /* MyError.swift */; };
-		D5C0D8AA2758EB60000081F9 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0D8A92758EB60000081F9 /* DatabaseManager.swift */; };
 		D5C0D8B22758EBCB000081F9 /* NewsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0D8B12758EBCB000081F9 /* NewsAppTests.swift */; };
 		D5C0D8BA2758EBE5000081F9 /* NetworkSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C0D8B92758EBE5000081F9 /* NetworkSpec.swift */; };
 		D5C50D63272AAD3000D76FE7 /* BaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C50D62272AAD3000D76FE7 /* BaseVM.swift */; };
@@ -95,7 +94,6 @@
 		D5AECD8827198830005B6A54 /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		D5AECD8A271989C2005B6A54 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		D5AECD8C271989F9005B6A54 /* MyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyError.swift; sourceTree = "<group>"; };
-		D5C0D8A92758EB60000081F9 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		D5C0D8AF2758EBCB000081F9 /* NewsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C0D8B12758EBCB000081F9 /* NewsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAppTests.swift; sourceTree = "<group>"; };
 		D5C0D8B92758EBE5000081F9 /* NetworkSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSpec.swift; sourceTree = "<group>"; };
@@ -346,7 +344,6 @@
 		D5C0D8A82758EB4A000081F9 /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				D5C0D8A92758EB60000081F9 /* DatabaseManager.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -576,7 +573,6 @@
 				D522465D2750E4280024F9CA /* DetailVC.swift in Sources */,
 				D58C86592750DF200032C9DD /* UIApplication.swift in Sources */,
 				D5AECD8927198830005B6A54 /* UserDefaultManager.swift in Sources */,
-				D5C0D8AA2758EB60000081F9 /* DatabaseManager.swift in Sources */,
 				D5AECD8D271989F9005B6A54 /* MyError.swift in Sources */,
 				D52246632750E48C0024F9CA /* FavoriteVM.swift in Sources */,
 				D52B6C992701C2E60054A529 /* GeneralAssembly.swift in Sources */,
