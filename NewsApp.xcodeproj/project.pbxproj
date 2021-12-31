@@ -13,6 +13,7 @@
 		D501EE8226B5797C0002A824 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D501EE8126B5797C0002A824 /* SceneDelegate.swift */; };
 		D501EE8926B5797D0002A824 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D501EE8826B5797D0002A824 /* Assets.xcassets */; };
 		D501EE8C26B5797D0002A824 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D501EE8A26B5797D0002A824 /* LaunchScreen.storyboard */; };
+		D514206C277F07A3009B6C09 /* MainCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D514206B277F07A3009B6C09 /* MainCellModel.swift */; };
 		D5152058270C458200F2E4C3 /* StartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5152057270C458200F2E4C3 /* StartVC.swift */; };
 		D515205A270C459C00F2E4C3 /* StartVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5152059270C459C00F2E4C3 /* StartVM.swift */; };
 		D515205C270C4A6400F2E4C3 /* StartAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = D515205B270C4A6400F2E4C3 /* StartAssembly.swift */; };
@@ -68,6 +69,7 @@
 		D501EE8826B5797D0002A824 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D501EE8B26B5797D0002A824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D501EE8D26B5797D0002A824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D514206B277F07A3009B6C09 /* MainCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCellModel.swift; sourceTree = "<group>"; };
 		D5152057270C458200F2E4C3 /* StartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVC.swift; sourceTree = "<group>"; };
 		D5152059270C459C00F2E4C3 /* StartVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartVM.swift; sourceTree = "<group>"; };
 		D515205B270C4A6400F2E4C3 /* StartAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAssembly.swift; sourceTree = "<group>"; };
@@ -271,6 +273,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		D514206A277F078A009B6C09 /*  Main */ = {
+			isa = PBXGroup;
+			children = (
+				D514206B277F07A3009B6C09 /* MainCellModel.swift */,
+			);
+			path = " Main";
+			sourceTree = "<group>";
+		};
 		D522465E2750E44A0024F9CA /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,6 +311,7 @@
 		D52B6C9D2701C88B0054A529 /* Local */ = {
 			isa = PBXGroup;
 			children = (
+				D514206A277F078A009B6C09 /*  Main */,
 				D5AECD8627198325005B6A54 /* ApiResult.swift */,
 				D5AECD8C271989F9005B6A54 /* MyError.swift */,
 			);
@@ -594,6 +605,7 @@
 				D52B6C992701C2E60054A529 /* GeneralAssembly.swift in Sources */,
 				D501EE8226B5797C0002A824 /* SceneDelegate.swift in Sources */,
 				D5AECD8727198325005B6A54 /* ApiResult.swift in Sources */,
+				D514206C277F07A3009B6C09 /* MainCellModel.swift in Sources */,
 				D52B6CA22701CB0E0054A529 /* Constants.swift in Sources */,
 				D58DA466270F01040093DB24 /* BaseVC.swift in Sources */,
 			);
