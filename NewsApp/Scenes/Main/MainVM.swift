@@ -9,19 +9,19 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-protocol HomeViewModeling {
+protocol MainViewModeling {
     var dataSource: PublishSubject<Result<[Articles], Error>> { get }
 }
 
-class HomeVM: BaseVM, HomeViewModeling {
+class MainVM: BaseVM, MainViewModeling {
     
     var dataSource = PublishSubject<Result<[Articles], Error>>()
     
     // MARK:- Properties
     
-    var mainService: HomeServicing
+    var mainService: MainServicing
     
-    init(mainService: HomeServicing) {
+    init(mainService: MainServicing) {
         self.mainService = mainService
         super.init()
         getHeadLines(country: "us")

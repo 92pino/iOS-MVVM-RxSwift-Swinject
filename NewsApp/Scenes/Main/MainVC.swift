@@ -8,13 +8,25 @@
 import UIKit
 import Foundation
 
-class HomeVC: BaseVC {
+class MainVC: BaseVC {
     
     // MARK: - Properties
     
-    var viewModel: HomeViewModeling!
+    var viewModel: MainViewModeling!
+    
+    // MARK: - IBOutlets
+    @IBOutlet var table: UITableView!
+    
+    
+    // MARK: - Functions
     
     override func setupView() {
+        setupTable()
+    }
+    
+    private func setupTable() {
+        table.register(MainCell.nib(), forCellReuseIdentifier: MainCell.identifier)
+        
         
     }
     

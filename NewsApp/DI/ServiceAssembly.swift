@@ -18,8 +18,8 @@ class  ServiceAssembly: Assembly {
         
         // MARK: - Service
         
-        container.register(HomeServicing.self, factory: { resolver in
-            HomeService(network: resolver.resolve(NetworkManagering.self)!)
+        container.register(MainServicing.self, factory: { resolver in
+            MainService(network: resolver.resolve(NetworkManagering.self)!)
         }).inObjectScope(.transient)
     }
 }

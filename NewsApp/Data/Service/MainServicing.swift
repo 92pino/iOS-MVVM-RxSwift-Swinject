@@ -8,11 +8,11 @@
 import Foundation
 import RxSwift
 
-protocol HomeServicing {
+protocol MainServicing {
     func getTopHeadLines(country: String) -> Observable<ApiResult<TopHeadLines>>
 }
 
-class HomeService: HomeServicing {
+class MainService: MainServicing {
     
     private let network: NetworkManagering
     

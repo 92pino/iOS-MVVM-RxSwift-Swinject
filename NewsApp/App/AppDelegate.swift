@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 GeneralAssembly(),
                 ServiceAssembly(),
                 StartAssembly(),
-                HomeAssembly()
+                MainAssembly()
             ], container: container)
             
             /// setup router
