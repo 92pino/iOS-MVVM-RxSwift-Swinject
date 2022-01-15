@@ -21,34 +21,20 @@ class MainVC: BaseVC {
     // MARK: - Functions
     
     override func setupView() {
-        setupTable()
+        registerTable()
     }
     
-    private func setupTable() {
+    private func registerTable() {
         table.register(MainCell.nib(), forCellReuseIdentifier: MainCell.identifier)
-        
-        
     }
     
     override func setupObservers() {
-        viewModel.dataSource.subscribe(onNext: { [weak self] result in
-            guard let strongSelf = self else { return }
-            
-            switch result {
-            case .success(let articles):
-               
-                break
-            case .failure(let error):
-                Logger.error(message: error.localizedDescription)
-                break
-            }
-        }).disposed(by: disposeBag)
+        viewModel.dataSource.asObservable().bind(to: table.rx.items(cellIdentifier: MainCell.identifier, cellType: MainCell.self)) { index, model, cell in
+            cell.viewModel = model
+        }.disposed(by: disposeBag)
     }
     
     override func setupViewBindings() {
         /* NO-OP */
     }
-    
-    
-    
 }

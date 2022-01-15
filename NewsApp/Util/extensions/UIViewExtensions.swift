@@ -12,30 +12,30 @@ extension UIView {
         self.stopLoadingAnimation()
         
         DispatchQueue.main.async {
-            let activityIndicatorView: UIActivityIndicatorView = {
-                let indicator = UIActivityIndicatorView()
-                if #available(iOS 13.0, *) {
-                    indicator.style = .large
-                }
-                indicator.color = Colors.COLOR_ACCENT
-                indicator.startAnimating()
-                indicator.autoresizingMask = [
-                    .flexibleLeftMargin,
-                    .flexibleRightMargin,
-                    .flexibleTopMargin,
-                    .flexibleBottomMargin
-                ]
-                indicator.tag = 91001901901
-                indicator.translatesAutoresizingMaskIntoConstraints = true
-                indicator.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
-                indicator.scale(factor: scale)
-                return indicator
-            }()
-            
-            self.insertSubview(activityIndicatorView, at: 0)
-            if(!activityIndicatorView.isAnimating) {
-                activityIndicatorView.startAnimating()
-            }
+//            let activityIndicatorView: UIActivityIndicatorView = {
+//                let indicator = UIActivityIndicatorView()
+//                if #available(iOS 13.0, *) {
+//                    indicator.style = .large
+//                }
+//                indicator.color = Colors.COLOR_ACCENT
+//                indicator.startAnimating()
+//                indicator.autoresizingMask = [
+//                    .flexibleLeftMargin,
+//                    .flexibleRightMargin,
+//                    .flexibleTopMargin,
+//                    .flexibleBottomMargin
+//                ]
+//                indicator.tag = 91001901901
+//                indicator.translatesAutoresizingMaskIntoConstraints = true
+//                indicator.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
+//                indicator.scale(factor: scale)
+//                return indicator
+//            }()
+//
+//            self.insertSubview(activityIndicatorView, at: 0)
+//            if(!activityIndicatorView.isAnimating) {
+//                activityIndicatorView.startAnimating()
+//            }
         }
     }
     
