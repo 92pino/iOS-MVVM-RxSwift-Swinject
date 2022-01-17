@@ -28,7 +28,8 @@ target 'NewsApp' do
   pod 'AlamofireEasyLogger'
   
   # Realm
-  pod 'RxRealm'
+  pod 'RealmSwift'
+  
   
   target 'NewsAppTests' do
       inherit! :search_paths
@@ -36,6 +37,6 @@ target 'NewsApp' do
 
       pod 'Quick'
       pod 'Nimble'
-    end
+  end
   
 end

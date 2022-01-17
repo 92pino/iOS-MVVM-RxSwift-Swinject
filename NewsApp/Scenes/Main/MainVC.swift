@@ -15,6 +15,7 @@ class MainVC: BaseVC {
     var viewModel: MainViewModeling!
     
     // MARK: - IBOutlets
+    
     @IBOutlet var table: UITableView!
     
     

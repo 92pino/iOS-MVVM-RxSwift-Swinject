@@ -13,11 +13,6 @@ PODS:
   - RxCocoa (6.1.0):
     - RxRelay (= 6.1.0)
     - RxSwift (= 6.1.0)
-  - RxRealm (5.0.3):
-    - Realm (~> 10.7)
-    - RealmSwift (~> 10.7)
-    - RxCocoa (~> 6.0)
-    - RxSwift (~> 6.0)
   - RxRelay (6.1.0):
     - RxSwift (= 6.1.0)
   - RxSwift (6.1.0)
@@ -34,8 +29,8 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Nimble
   - Quick
+  - RealmSwift
   - RxCocoa (= 6.1.0)
-  - RxRealm
   - RxSwift (= 6.1.0)
   - SDWebImage
   - Swinject (= 2.6.2)
@@ -51,7 +46,6 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - RxCocoa
-    - RxRealm
     - RxRelay
     - RxSwift
     - SDWebImage
@@ -67,13 +61,12 @@ SPEC CHECKSUMS:
   Realm: fac5ecd031fcb81171627b74944c885662d4b266
   RealmSwift: 9b02d25acb46a14756bde9893abb99e2e3675923
   RxCocoa: 5c51f02d562cbd94629f6c26cf0c80fe4ab8d343
-  RxRealm: d9fedf16e3ead54b0be2077d2ff4a1b2dc27be39
   RxRelay: 483e1a19fad961b41f0b0c0bee506f46c1ae14fe
   RxSwift: a834e5c538e89eca0cae86f403f4fbf0336786ce
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
   Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: d845df47a5abbaaf6c47ff945d64ad3247dc4789
+PODFILE CHECKSUM: 2ff3d7481154b5e224c731d4df90081d11cddb28
 
 COCOAPODS: 1.11.2
