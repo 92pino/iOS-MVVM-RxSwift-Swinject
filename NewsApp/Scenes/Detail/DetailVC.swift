@@ -7,13 +7,33 @@
 
 import UIKit
 
-class DetailVC: UIViewController {
+class DetailVC: BaseVC {
 
+    // MARK: - IBOutlets
+    
+    @IBOutlet var tilteLabel: UILabel!
+    
+    // MARK: - Properties
+    
+    var viewModel: DetailViewModeling!
+    
+    // MARK: - Lifecycles
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
-
+    // MARK: - Functions
+    
+    override func setupView() {
+        
+    }
+    
+    override func setupSubscribers() {
+        
+    }
+    
+    override func setupViewBindings() {
+        
+    }
 }

@@ -14,7 +14,7 @@ class StartVC: BaseVC {
     
     var viewModel: StartViewModeling!
     
-    override func setupObservers() {
+    override func setupSubscribers() {
         viewModel.trigger.subscribe(onNext: { [weak self] isChanged in
             if (isChanged) {
                 self?.navigateToMain()

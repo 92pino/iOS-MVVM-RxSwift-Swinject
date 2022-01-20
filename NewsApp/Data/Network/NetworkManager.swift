@@ -69,12 +69,12 @@ final class NetworkManager: NetworkManagering {
                             observer.onNext(ApiResult(data: model, statusCode: response.response?.statusCode))
                             observer.onCompleted()
                         } else {
-                            observer.onError(MyError(message: "Decoding Failed"))
+                            let myError = MyError(status: "", code: "", message: "Decoding Failed")
+                            observer.onError(myError)
                             observer.onCompleted()
                         }
                     case .failure(let error):
-                        var myError = MyError(message: "")
-                        myError.message = error.localizedDescription
+                        let myError = MyError(status: "", code: "", message: error.localizedDescription)
                         observer.onError(myError)
                     }
                 }

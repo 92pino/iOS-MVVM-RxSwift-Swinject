@@ -9,12 +9,14 @@ import Foundation
 
 
 struct MyError: Error {
-    var message: String?
+    let status: String?
+    let code: String?
+    let message: String?
 }
 
 extension MyError {
     
     static func getError(error: Error) -> MyError {
-        return error as? MyError ?? MyError.init(message: "")
+        return error as? MyError ?? MyError.init(status: "", code: "", message: "")
     }
 }

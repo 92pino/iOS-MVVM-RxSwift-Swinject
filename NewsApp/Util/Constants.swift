@@ -13,13 +13,13 @@ struct Constants {
     
     static let START_STORYBOARD_ID = "Start"
     static let TABBAR_STORYBOARD_ID = "Tabbar"
-    static let HOME_STORYBOARD_ID = "Home"
+    static let MAIN_STORYBOARD_ID = "Main"
     
     // MARK: - VC Ids
     
     static let START_VC_ID = "StartVC"
     static let TABBAR_VC_ID = "TabbarVC"
-    static let Home_VC_ID = "HomeVC"
+    static let MAIN_VC_ID = "MainVC"
     
     // MARK: - General
 

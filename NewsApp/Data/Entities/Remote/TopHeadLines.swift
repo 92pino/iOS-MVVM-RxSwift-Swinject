@@ -11,14 +11,14 @@ struct TopHeadLines: Codable {
     
     let status: String?
     let totalResults: Int?
-    let articles: [Articles]?
+    let articles: [Article]?
     
     enum CodingKeys: String, CodingKey {
         case status, totalResults, articles
     }
 }
 
-struct Articles: Codable {
+struct Article: Codable {
     
     let source: Source?
     let author: String?

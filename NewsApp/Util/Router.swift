@@ -35,4 +35,8 @@ class Router {
             window.rootViewController = navigationController
         }
     }
+    
+    func navigateToDetailVC() {
+        
+    }
 }

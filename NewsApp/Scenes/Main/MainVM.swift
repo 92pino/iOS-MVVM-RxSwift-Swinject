@@ -11,11 +11,13 @@ import RxCocoa
 
 protocol MainViewModeling {
     var dataSource: BehaviorRelay<[MainCellModeling]> { get }
+    var articles: [Article] { get }
 }
 
 class MainVM: BaseVM, MainViewModeling {
     
     var dataSource = BehaviorRelay<[MainCellModeling]>(value: [])
+    var articles = [Article]()
     
     // MARK:- Properties
     
@@ -31,14 +33,18 @@ class MainVM: BaseVM, MainViewModeling {
         var list = [MainCellModeling]()
         
         mainService.getTopHeadLines(country: country).subscribe(onNext: { [weak self] apiResult in
+            
+            guard let strongSelf = self else { return }
             guard let articles = apiResult.data?.articles else { return }
+            strongSelf.articles = articles
             
             let _ = articles.map {
                 let mainCellModel = MainCellModel(title: $0.title, imageUrl: $0.urlToImage)
-               list.append(mainCellModel)
+                list.append(mainCellModel)
             }
             
-            self?.dataSource.accept(list)
+            strongSelf.dataSource.accept(list)
+            
         }, onError: { error in
             Logger.error(message: error.localizedDescription)
         }).disposed(by: disposeBag)
