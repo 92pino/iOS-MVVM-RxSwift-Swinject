@@ -179,14 +179,10 @@
 			isa = PBXGroup;
 			children = (
 				D501EE9D26B57A640002A824 /* App */,
-				D501EE8826B5797D0002A824 /* Assets.xcassets */,
 				D501EEA026B57A6A0002A824 /* Data */,
 				D501EEA726B57AD80002A824 /* DI */,
-				D501EE8D26B5797D0002A824 /* Info.plist */,
-				D501EE8A26B5797D0002A824 /* LaunchScreen.storyboard */,
 				D501EEA126B57A7B0002A824 /* Scenes */,
 				D52B6C9E2701C9A10054A529 /* Util */,
-				D5CCA9E127998CD90025BBF9 /* Colors.xcassets */,
 			);
 			path = NewsApp;
 			sourceTree = "<group>";
@@ -194,6 +190,10 @@
 		D501EE9D26B57A640002A824 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				D5CCA9E127998CD90025BBF9 /* Colors.xcassets */,
+				D501EE8A26B5797D0002A824 /* LaunchScreen.storyboard */,
+				D501EE8D26B5797D0002A824 /* Info.plist */,
+				D501EE8826B5797D0002A824 /* Assets.xcassets */,
 				D501EE8126B5797C0002A824 /* SceneDelegate.swift */,
 				D501EE7F26B5797C0002A824 /* AppDelegate.swift */,
 			);
@@ -786,7 +786,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2273B53FQU;
-				INFOPLIST_FILE = NewsApp/Info.plist;
+				INFOPLIST_FILE = NewsApp/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -807,7 +807,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2273B53FQU;
-				INFOPLIST_FILE = NewsApp/Info.plist;
+				INFOPLIST_FILE = NewsApp/App/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -12,12 +12,16 @@ import RxCocoa
 protocol MainViewModeling {
     var dataSource: BehaviorRelay<[MainCellModeling]> { get }
     var articles: [Article] { get }
+    var page: Int { get }
+    
+    func getHeadLines(country: String, page: Int)
 }
 
 class MainVM: BaseVM, MainViewModeling {
-    
+
     var dataSource = BehaviorRelay<[MainCellModeling]>(value: [])
     var articles = [Article]()
+    var page: Int = 1
     
     // MARK:- Properties
     
@@ -26,13 +30,13 @@ class MainVM: BaseVM, MainViewModeling {
     init(mainService: MainServicing) {
         self.mainService = mainService
         super.init()
-        getHeadLines(country: "us")
+        getHeadLines(country: "us", page: page)
     }
     
-    private func getHeadLines(country: String)  {
+    func getHeadLines(country: String, page: Int)  {
         var list = [MainCellModeling]()
         
-        mainService.getTopHeadLines(country: country).subscribe(onNext: { [weak self] apiResult in
+        mainService.getTopHeadLines(country: country, page: page).subscribe(onNext: { [weak self] apiResult in
             
             guard let strongSelf = self else { return }
             guard let articles = apiResult.data?.articles else { return }
@@ -44,6 +48,7 @@ class MainVM: BaseVM, MainViewModeling {
             }
             
             strongSelf.dataSource.accept(list)
+            strongSelf.page += 1
             
         }, onError: { error in
             Logger.error(message: error.localizedDescription)
