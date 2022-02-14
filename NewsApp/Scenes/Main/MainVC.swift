@@ -23,6 +23,7 @@ class MainVC: BaseVC {
     
     override func setupView() {
         registerTable()
+        table.delegate = self
     }
     
     private func registerTable() {
@@ -54,15 +55,17 @@ class MainVC: BaseVC {
     }
 }
 
-// MARK: - Extension
+// MARK: - Extensions
 
 extension MainVC: UITableViewDelegate, UIScrollViewDelegate {
+    
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView.contentOffset.y > (table.contentSize.height - 100 - scrollView.frame.size.height) {
+        let pos = scrollView.contentOffset.y
+        if pos > table.contentSize.height - 50 - scrollView.frame.size.height {
             viewModel.getHeadLines(country: "us", page: viewModel.page)
         }
     }

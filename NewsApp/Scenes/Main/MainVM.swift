@@ -22,33 +22,39 @@ class MainVM: BaseVM, MainViewModeling {
     var dataSource = BehaviorRelay<[MainCellModeling]>(value: [])
     var articles = [Article]()
     var page: Int = 1
+    var list = [MainCellModeling]()
     
     // MARK:- Properties
+    
+    private var isLoadingOrders = false
+    private let pageSize = 20
+    private var hasMorePages = true
     
     var mainService: MainServicing
     
     init(mainService: MainServicing) {
         self.mainService = mainService
         super.init()
-        getHeadLines(country: "us", page: page)
     }
     
     func getHeadLines(country: String, page: Int)  {
-        var list = [MainCellModeling]()
-        
-        mainService.getTopHeadLines(country: country, page: page).subscribe(onNext: { [weak self] apiResult in
-            
+        mainService.getTopHeadLines(country: country, page: page, pageSize: pageSize).subscribe(onNext: { [weak self] apiResult in
             guard let strongSelf = self else { return }
+            
             guard let articles = apiResult.data?.articles else { return }
             strongSelf.articles = articles
             
             let _ = articles.map {
                 let mainCellModel = MainCellModel(title: $0.title, imageUrl: $0.urlToImage)
-                list.append(mainCellModel)
+                strongSelf.list.append(mainCellModel)
             }
             
-            strongSelf.dataSource.accept(list)
-            strongSelf.page += 1
+            strongSelf.dataSource.accept(strongSelf.list)
+            strongSelf.hasMorePages = strongSelf.articles.count == strongSelf.pageSize
+            
+            if strongSelf.hasMorePages {
+                strongSelf.page += 1
+            }
             
         }, onError: { error in
             Logger.error(message: error.localizedDescription)

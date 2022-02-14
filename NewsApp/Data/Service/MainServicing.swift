@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 protocol MainServicing {
-    func getTopHeadLines(country: String, page: Int) -> Observable<ApiResult<TopHeadLines>>
+    func getTopHeadLines(country: String, page: Int, pageSize: Int) -> Observable<ApiResult<TopHeadLines>>
 }
 
 class MainService: MainServicing {
@@ -20,9 +20,9 @@ class MainService: MainServicing {
         self.network = network
     }
     
-    func getTopHeadLines(country: String, page: Int) -> Observable<ApiResult<TopHeadLines>> {
+    func getTopHeadLines(country: String, page: Int, pageSize: Int) -> Observable<ApiResult<TopHeadLines>> {
         return network.request(method: .get,
-                               url: NewsEndPoints.headLines.url + "?country=\(country)&apiKey=\(Constants.API_KEY)&page=\(page)&pageSize=10",
+                               url: NewsEndPoints.headLines.url + "?country=\(country)&apiKey=\(Constants.API_KEY)&page=\(page)&pageSize=\(pageSize)",
                                parameters: nil,
                                type: TopHeadLines.self)
     }
