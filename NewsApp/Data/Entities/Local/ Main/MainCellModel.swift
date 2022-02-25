@@ -12,12 +12,7 @@ protocol MainCellModeling {
     var imageUrl: String? { get }
 }
 
-class MainCellModel : MainCellModeling {
-    var title: String?
-    var imageUrl: String?
-    
-    init(title: String?, imageUrl: String?) {
-        self.title = title
-        self.imageUrl = imageUrl
-    }
+struct MainCellModel : MainCellModeling {
+    let title: String?
+    let imageUrl: String?
 }

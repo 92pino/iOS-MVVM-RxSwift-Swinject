@@ -18,7 +18,6 @@ class MainVC: BaseVC {
     
     var viewModel: MainViewModeling!
     
-    
     // MARK: - Functions
     
     override func setupView() {
@@ -36,11 +35,11 @@ class MainVC: BaseVC {
         }.disposed(by: disposeBag)
         
         table.rx.itemSelected.subscribe(onNext: { [weak self] indexPath in
-            guard let strongSelf = self else { return }
-            strongSelf.table.deselectRow(at: indexPath, animated: true)
-        
-            let article = strongSelf.viewModel.articles[indexPath.row]
             
+            guard let strongSelf = self else { return }
+            
+            strongSelf.table.deselectRow(at: indexPath, animated: true)
+            let article = strongSelf.viewModel.articles[indexPath.row]
             self?.navigateToDetailVC(article: article)
             
         }).disposed(by: disposeBag)
@@ -59,13 +58,11 @@ class MainVC: BaseVC {
 
 extension MainVC: UITableViewDelegate, UIScrollViewDelegate {
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pos = scrollView.contentOffset.y
-        if pos > table.contentSize.height - 50 - scrollView.frame.size.height {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        
+        if (offsetY > contentHeight - scrollView.frame.height * 4) && !viewModel.isLoading {
             viewModel.getHeadLines(country: "us", page: viewModel.page)
         }
     }
