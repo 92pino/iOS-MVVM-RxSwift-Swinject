@@ -48,7 +48,7 @@ class MainVM: BaseVM, MainViewModeling {
                 guard let strongSelf = self else { return }
                 
                 guard let articles = apiResult.data?.articles else { return }
-                strongSelf.articles = articles
+                strongSelf.articles.append(contentsOf: articles)
                 
                 let mainCellModels = articles.map {
                    MainCellModel(title: $0.title, imageUrl: $0.urlToImage)

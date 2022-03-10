@@ -46,7 +46,7 @@ class MainVC: BaseVC {
     }
     
     private func navigateToDetailVC(article: Article) {
-        
+        print(article.title)
     }
     
     override func setupViewBindings() {
